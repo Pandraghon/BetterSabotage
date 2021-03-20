@@ -23,7 +23,7 @@ Everyone in the lobby need to have the mod installed.
 Follow one of these methods to install it:
 
  - [All included Archive](#all-included-archive): easiest
- - [Custom Install](custom-install): advanced (recommended)
+ - [Custom Install](#custom-install): advanced (recommended)
 
 ### All included Archive
 
