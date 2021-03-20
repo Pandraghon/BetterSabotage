@@ -12,7 +12,7 @@ namespace Glaucus
             
             foreach (PlayerControl player in PlayerControl.AllPlayerControls.ToArray())
             { 
-                Main.Logic.AllModdedPlayer.Add(new ModdedPlayer { PlayerControl = player, SavedSkin = player.Data.SkinId, SavedHat = player.Data.HatId });
+                Main.Logic.AllModdedPlayer.Add(new ModdedPlayer { PlayerControl = player });
             }
         }
     }

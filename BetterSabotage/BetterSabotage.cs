@@ -37,21 +37,14 @@ namespace Glaucus
         {
             PlayerControl.myRend.material.SetColor("_BackColor", Main.Palette.UnknownBackColor);
             PlayerControl.myRend.material.SetColor("_BodyColor", Main.Palette.UnknownBodyColor);
-            PlayerControl.nameText.Text = "";
-            PlayerControl.SetHat(0U, 0);
-            PlayerControl.SetSkin(0U);
-            if (PlayerControl.CurrentPet != null)
-                PlayerControl.CurrentPet.Visible = false;
+            PlayerControl.Visible = false; // hide skin, hat, name, pet
+            PlayerControl.myRend.enabled = true;
         }
 
         public void RemoveAnonymous()
         {
-            PlayerControl.nameText.Text = PlayerControl.name;
-            PlayerControl.SetHat(SavedHat, PlayerControl.Data.ColorId);
-            PlayerControl.SetSkin(SavedSkin);
+            PlayerControl.Visible = true;
             PlayerControl.SetColor(PlayerControl.Data.ColorId);
-            if (PlayerControl.CurrentPet != null)
-                PlayerControl.CurrentPet.Visible = true;
         }
     }
 
