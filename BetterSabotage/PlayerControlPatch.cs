@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using HarmonyLib;
+using UnityEngine;
 
 namespace Glaucus
 {
@@ -9,6 +11,7 @@ namespace Glaucus
         [HarmonyPatch("CAMJPMDIIMN" /* PlayerControl.Visible */, MethodType.Setter)]
         static void Postfix(PlayerControl __instance, ref bool NJFHEFBMBOD)
         {
+            if (!PlayerControl.LocalPlayer || PlayerControl.LocalPlayer.myTasks == null) return;
             if (PlayerControl.LocalPlayer.myTasks.ToArray().Any(task => task.TaskType == TaskTypes.FixComms)
                 && (BetterSabotage.CommsSabotageAnonymous.GetValue() == 1 && !PlayerControl.LocalPlayer.Data.IsImpostor
                 || BetterSabotage.CommsSabotageAnonymous.GetValue() == 2))
@@ -21,6 +24,33 @@ namespace Glaucus
                 }
 
                 __instance.nameText.gameObject.SetActive(false);
+            }
+        }
+        
+        [HarmonyPatch(nameof(PlayerControl.SetPlayerMaterialColors), new Type[] {typeof(int), typeof(Renderer)})]
+        static void Postfix(int FGAOHLPPBDL /* colorId */, Renderer FNEEAAEEGLD)
+        {
+            Renderer rend = FNEEAAEEGLD;
+            if (!rend || !PlayerControl.LocalPlayer || PlayerControl.LocalPlayer.myTasks == null) return;
+            if (PlayerControl.LocalPlayer.myTasks.ToArray().Any(task => task.TaskType == TaskTypes.FixComms)
+                && (BetterSabotage.CommsSabotageAnonymous.GetValue() == 1 && !PlayerControl.LocalPlayer.Data.IsImpostor
+                    || BetterSabotage.CommsSabotageAnonymous.GetValue() == 2))
+            {
+                rend.material.SetColor("_BackColor", Main.Palette.UnknownBackColor);
+                rend.material.SetColor("_BodyColor", Main.Palette.UnknownBodyColor);
+            }
+        }
+        
+        [HarmonyPatch(nameof(PlayerControl.SetPlayerMaterialColors), new Type[] {typeof(Color), typeof(Renderer)})]
+        static void Postfix(Color JMDILEGDONK, Renderer FNEEAAEEGLD)
+        {
+            Renderer rend = FNEEAAEEGLD;
+            if (!rend || !PlayerControl.LocalPlayer) return;
+            if (BetterSabotage.CommsSabotageAnonymous.GetValue() == 1 && !PlayerControl.LocalPlayer.Data.IsImpostor
+                || BetterSabotage.CommsSabotageAnonymous.GetValue() == 2)
+            {
+                rend.material.SetColor("_BackColor", Main.Palette.UnknownBackColor);
+                rend.material.SetColor("_BodyColor", Main.Palette.UnknownBodyColor);
             }
         }
         
