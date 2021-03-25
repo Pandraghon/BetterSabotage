@@ -39,9 +39,20 @@ Follow one of these methods to install it:
  4. Copy the dll file into `Among Us/BepInEx/plugins`.
  5. Repeat steps 3-4 for the file `Essentials-2021.3.5s.dll` from [DorCoMaNdO's repository](https://github.com/DorCoMaNdO/Reactor-Essentials/releases).
  6. (Optional) If you want to play on official servers, you must do the following :
-   - Open **`Among us/BepInEx/config/gg.reactor.api.cfg`** with a text editor. 
-   - Find the line `Modded handshake = true` and change it to `Modded handshake = false`.
-   - Save and close your editor.
+    - Open **`Among us/BepInEx/config/gg.reactor.api.cfg`** with a text editor. 
+    - Find the line `Modded handshake = true` and change it to `Modded handshake = false`.
+    - Save and close your editor.
+
+## Uninstallation
+
+Remove following files and folders from the Among Us folder:
+
+```
+├── BepInEx/
+├── mono/
+├── doorstop_config.ini
+└── winhttp.dll
+```
 
 ## Using
 
