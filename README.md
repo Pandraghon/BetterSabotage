@@ -8,10 +8,15 @@ For the moment, only the Steam version (2021.3.5s) of the game is supported.
 
  - **Sabotage Comms** makes everyone **anonymous**.
    Everyone is gray, without skin, hat or pet.
-   - Options : [ `Nobody` | `Crewmates` | `Everyone` ]
+   - Options: [ `Nobody` | `Crewmates` | `Everyone` ]
      - `Nobody`: disable this feature
      - `Crewmates`: only Crewmates are impacted. Impostors' vision remains unchanged
      - `Everyone`: even Impostors are impacted
+ - **Sabotage Reactor** makes the player's camera **shake**.
+   - Options: [ `None` | `Low` | `High` ]
+     - `None`: disable this feature
+     - `Low`: the shakes are mild
+     - `High`: the shakes are strong  
     
 ## Extra features
 
