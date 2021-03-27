@@ -57,7 +57,6 @@ namespace Glaucus
         [HarmonyPatch(nameof(PlayerControl.AddSystemTask))]
         static void Postfix(SystemTypes IBKONFPFHAB)
         {
-            System.Console.WriteLine("AddSystemTask");
             SystemTypes system = IBKONFPFHAB;
             switch (system)
             {
@@ -73,7 +72,6 @@ namespace Glaucus
         [HarmonyPatch(nameof(PlayerControl.RemoveTask))]
         static void Postfix(PlayerTask HHCGLKKJDLA)
         {
-            System.Console.WriteLine("RemoveTask");
             PlayerTask task = HHCGLKKJDLA;
             switch (task.TaskType)
             {
