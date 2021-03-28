@@ -78,3 +78,8 @@ Remove following files and folders from the Among Us folder:
 ## License
 
 This software is distributed under the [MIT License](https://github.com/Pandraghon/BetterSabotage/blob/master/LICENSE).
+
+## Donations
+
+If you like the mod and want to support the development, please consider to donate. Any donations are greatly appreciated.
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/pandraghon)
