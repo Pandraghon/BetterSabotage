@@ -1,4 +1,7 @@
-﻿# BetterSabotage
+# BetterSabotage
+![GitHub](https://img.shields.io/github/license/Pandraghon/BetterSabotage)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Pandraghon/BetterSabotage?include_prereleases)
+![GitHub all releases](https://img.shields.io/github/downloads/Pandraghon/BetterSabotage/total)
 
 BetterSabotage is an Among Us mod. Its purpose is to add functionality to sabotages.
 
@@ -50,6 +53,12 @@ Follow one of these methods to install it:
 
 ## Uninstallation
 
+### Only Remove BetterSabotage
+
+To uninstall BetterSabotage, simply delete `BetterSabotage-2021.3.5s.dll` from `Among Us/BepInEx/plugins`.
+
+### Factory Reset
+
 Remove following files and folders from the Among Us folder:
 
 ```
@@ -59,7 +68,13 @@ Remove following files and folders from the Among Us folder:
 └── winhttp.dll
 ```
 
-## Using
+## Used libraries
 
- - https://github.com/NuclearPowered/Reactor
- - https://github.com/DorCoMaNdO/Reactor-Essentials
+ - ![](https://img.shields.io/github/stars/NuclearPowered/Reactor?style=social) https://github.com/NuclearPowered/Reactor: Modding api for Among Us
+ - ![](https://img.shields.io/github/stars/DorCoMaNdO/Reactor-Essentials?style=social) https://github.com/DorCoMaNdO/Reactor-Essentials: A library with essential tools to make plugins user-friendly to configure and use and to speed up development.
+ - ![](https://img.shields.io/github/stars/NuclearPowered/BepInEx?style=social) https://github.com/NuclearPowered/BepInEx (forked from https://github.com/BepInEx/BepInEx): Unity / XNA game patcher and plugin framework 
+ - ![](https://img.shields.io/github/stars/BepInEx/HarmonyX?style=social) https://github.com/BepInEx/HarmonyX: A library for patching, replacing and decorating .NET and Mono methods during runtime. 
+
+## License
+
+This software is distributed under the [MIT License](https://github.com/Pandraghon/BetterSabotage/blob/master/LICENSE).
