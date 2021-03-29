@@ -19,7 +19,8 @@ For the moment, only the Steam version (2021.3.5s) of the game is supported.
    - Options: [ `None` | `Low` | `High` ]
      - `None`: disable this feature
      - `Low`: the shakes are mild
-     - `High`: the shakes are strong  
+     - `High`: the shakes are strong
+   - *Note: if the motion is problematic for a specific player, the shaking amount can be changed individually in `Among us\BepInEx\config\glaucus.pocus.BetterSabotage.cfg`*
     
 ## Extra features
 
@@ -44,10 +45,10 @@ Follow one of these methods to install it:
  1. Install Reactor BepInEx by following **[these instructions](https://docs.reactor.gg/docs/basic/install_bepinex/)**.
  2. Install Reactor by following **[these instructions](https://docs.reactor.gg/docs/basic/install_reactor)**.
  3. Download the file `BetterSabotage-2021.3.5s.dll` in the [Releases section](https://github.com/Pandraghon/BetterSabotage/releases).
- 4. Copy the dll file into `Among Us/BepInEx/plugins`.
+ 4. Copy the dll file into `Among Us\BepInEx\plugins`.
  5. Repeat steps 3-4 for the file `Essentials-2021.3.5s.dll` from [DorCoMaNdO's repository](https://github.com/DorCoMaNdO/Reactor-Essentials/releases).
  6. (Optional) If you want to play on official servers, you must do the following :
-    - Open **`Among us/BepInEx/config/gg.reactor.api.cfg`** with a text editor. 
+    - Open **`Among us\BepInEx\config\gg.reactor.api.cfg`** with a text editor. 
     - Find the line `Modded handshake = true` and change it to `Modded handshake = false`.
     - Save and close your editor.
 
@@ -55,7 +56,7 @@ Follow one of these methods to install it:
 
 ### Only Remove BetterSabotage
 
-To uninstall BetterSabotage, simply delete `BetterSabotage-2021.3.5s.dll` from `Among Us/BepInEx/plugins`.
+To uninstall BetterSabotage, simply delete `BetterSabotage-2021.3.5s.dll` from `Among Us\BepInEx\plugins`.
 
 ### Factory Reset
 

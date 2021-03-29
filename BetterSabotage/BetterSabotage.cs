@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.IL2CPP;
 using Essentials.Options;
 using HarmonyLib;
@@ -66,12 +67,21 @@ namespace Glaucus
         //Credit to https://github.com/DorCoMaNdO/Reactor-Essentials
         public static CustomStringOption CommsSabotageAnonymous = CustomOption.AddString("Comms Sabotage Anonymous", new string[] { "Nobody", "Crewmates", "Everyone" });
         public static CustomStringOption ReactorSabotageShaking = CustomOption.AddString("Reactor Sabotage Shaking", new string[] { "None", "Low", "High" });
+        
+        public static float[] ShakingValues { get; private set; }
         public Harmony Harmony { get; } = new Harmony(Id);
 
         public override void Load()
         {
             CustomOption.ShamelessPlug = false;
 
+            ShakingValues = new float[]
+            {
+                0f,
+                Config.Bind("Reactor Sabotage", "Low Shaking Value", 0.03f).Value,
+                Config.Bind("Reactor Sabotage", "High Shaking Value", 0.3f).Value
+            };
+            
             ReactorVersionShower.TextUpdated += (text) =>
             {
                 int index = text.Text.LastIndexOf('\n');

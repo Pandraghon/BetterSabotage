@@ -19,7 +19,7 @@ namespace Glaucus
                 if (reactorTask && ReactorSabotageShaking.GetValue() != 0)
                 {
                     float reactorCountdown = reactorTask.reactor.Countdown;
-                    __instance.PlayerCam.shakeAmount = 0.03f * (float)(Math.Pow(ReactorSabotageShaking.GetValue(), 3));
+                    __instance.PlayerCam.shakeAmount = ShakingValues[ReactorSabotageShaking.GetValue()];
                     __instance.PlayerCam.shakePeriod = 400;
                 }
                 else
