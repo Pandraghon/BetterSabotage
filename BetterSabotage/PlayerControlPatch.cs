@@ -8,8 +8,8 @@ namespace Glaucus
     [HarmonyPatch(typeof(PlayerControl))]
     class PlayerControlPatch
     {
-        [HarmonyPatch("CAMJPMDIIMN" /* PlayerControl.Visible */, MethodType.Setter)]
-        static void Postfix(PlayerControl __instance, ref bool NJFHEFBMBOD)
+        [HarmonyPatch("FHBHBMIJFID" /* PlayerControl.Visible */, MethodType.Setter)]
+        static void Postfix(PlayerControl __instance, ref bool IKGGJMHPDGH)
         {
             if (!PlayerControl.LocalPlayer || PlayerControl.LocalPlayer.myTasks == null) return;
             if (PlayerControl.LocalPlayer.myTasks.ToArray().Any(task => task.TaskType == TaskTypes.FixComms)
@@ -28,9 +28,9 @@ namespace Glaucus
         }
         
         [HarmonyPatch(nameof(PlayerControl.SetPlayerMaterialColors), new Type[] {typeof(int), typeof(Renderer)})]
-        static void Postfix(int FGAOHLPPBDL /* colorId */, Renderer FNEEAAEEGLD)
+        static void Postfix(int PNGKEHIHPLJ /* colorId */, Renderer AGOAPDBAHKG)
         {
-            Renderer rend = FNEEAAEEGLD;
+            Renderer rend = AGOAPDBAHKG;
             if (!rend || !PlayerControl.LocalPlayer || PlayerControl.LocalPlayer.myTasks == null) return;
             if (PlayerControl.LocalPlayer.myTasks.ToArray().Any(task => task.TaskType == TaskTypes.FixComms)
                 && (BetterSabotage.CommsSabotageAnonymous.GetValue() == 1 && !PlayerControl.LocalPlayer.Data.IsImpostor
@@ -42,9 +42,9 @@ namespace Glaucus
         }
         
         [HarmonyPatch(nameof(PlayerControl.SetPlayerMaterialColors), new Type[] {typeof(Color), typeof(Renderer)})]
-        static void Postfix(Color JMDILEGDONK, Renderer FNEEAAEEGLD)
+        static void Postfix(Color JBOMEMICJJM, Renderer AGOAPDBAHKG)
         {
-            Renderer rend = FNEEAAEEGLD;
+            Renderer rend = AGOAPDBAHKG;
             if (!rend || !PlayerControl.LocalPlayer) return;
             if (BetterSabotage.CommsSabotageAnonymous.GetValue() == 1 && !PlayerControl.LocalPlayer.Data.IsImpostor
                 || BetterSabotage.CommsSabotageAnonymous.GetValue() == 2)
@@ -55,9 +55,9 @@ namespace Glaucus
         }
         
         [HarmonyPatch(nameof(PlayerControl.AddSystemTask))]
-        static void Postfix(SystemTypes IBKONFPFHAB)
+        static void Postfix(SystemTypes LEDKOPINDJL)
         {
-            SystemTypes system = IBKONFPFHAB;
+            SystemTypes system = LEDKOPINDJL;
             switch (system)
             {
                 case SystemTypes.Comms:
@@ -70,9 +70,9 @@ namespace Glaucus
         }
         
         [HarmonyPatch(nameof(PlayerControl.RemoveTask))]
-        static void Postfix(PlayerTask HHCGLKKJDLA)
+        static void Postfix(PlayerTask NBPIFFEDABA)
         {
-            PlayerTask task = HHCGLKKJDLA;
+            PlayerTask task = NBPIFFEDABA;
             switch (task.TaskType)
             {
                 case TaskTypes.FixComms:

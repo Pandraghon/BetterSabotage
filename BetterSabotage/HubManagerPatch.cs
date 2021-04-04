@@ -16,6 +16,7 @@ namespace Glaucus
             if (AmongUsClient.Instance.GameState == InnerNetClient.GameStates.Started)
             {
                 ReactorTask reactorTask = Object.FindObjectOfType<ReactorTask>();
+                NoOxyTask oxygenTask = Object.FindObjectOfType<NoOxyTask>();
                 if (reactorTask && ReactorSabotageShaking.GetValue() != 0)
                 {
                     float reactorCountdown = reactorTask.reactor.Countdown;
@@ -26,6 +27,23 @@ namespace Glaucus
                 {
                     __instance.PlayerCam.shakeAmount = 0;
                     __instance.PlayerCam.shakePeriod = 0;
+                }
+
+                if (oxygenTask && OxygenSabotageSlowdown.GetValue())
+                {
+                    foreach (PlayerControl player in PlayerControl.AllPlayerControls)
+                    {
+                        player.MyPhysics.Speed = Math.Max(1.5f, 
+                            Math.Min(2.5f, 
+                                2.5f * oxygenTask.reactor.Countdown / oxygenTask.reactor.LifeSuppDuration));
+                    }
+                }
+                else
+                {
+                    foreach (PlayerControl player in PlayerControl.AllPlayerControls)
+                    {
+                        player.MyPhysics.Speed = 2.5f;
+                    }
                 }
             }
         }

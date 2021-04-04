@@ -3,6 +3,7 @@ using System.Reflection;
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.IL2CPP;
+using Epic.OnlineServices.Stats;
 using Essentials.Options;
 using HarmonyLib;
 using Reactor;
@@ -67,6 +68,7 @@ namespace Glaucus
         //Credit to https://github.com/DorCoMaNdO/Reactor-Essentials
         public static CustomStringOption CommsSabotageAnonymous = CustomOption.AddString("Comms Sabotage Anonymous", new string[] { "Nobody", "Crewmates", "Everyone" });
         public static CustomStringOption ReactorSabotageShaking = CustomOption.AddString("Reactor Sabotage Shaking", new string[] { "None", "Low", "High" });
+        public static CustomToggleOption OxygenSabotageSlowdown = CustomOption.AddToggle("Oxygen Sabotage Slows Down", false);
         
         public static float[] ShakingValues { get; private set; }
         public Harmony Harmony { get; } = new Harmony(Id);
