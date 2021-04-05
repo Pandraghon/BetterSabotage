@@ -5,7 +5,7 @@
 
 BetterSabotage is an Among Us mod. Its purpose is to add functionality to sabotages.
 
-For the moment, only the Steam version (2021.3.5s) of the game is supported.
+For the moment, only the Steam version (2021.3.5s & 2021.3.31.3s) of the game is supported.
 
 ## Features
 
@@ -21,6 +21,7 @@ For the moment, only the Steam version (2021.3.5s) of the game is supported.
      - `Low`: the shakes are mild
      - `High`: the shakes are strong
    - *Note: if the motion is problematic for a specific player, the shaking amount can be changed individually in `Among us\BepInEx\config\glaucus.pocus.BetterSabotage.cfg`*
+ - **Sabotage Oxygen** slows down the players.
     
 ## Extra features
 
@@ -44,13 +45,20 @@ Follow one of these methods to install it:
 
  1. Install Reactor BepInEx by following **[these instructions](https://docs.reactor.gg/docs/basic/install_bepinex/)**.
  2. Install Reactor by following **[these instructions](https://docs.reactor.gg/docs/basic/install_reactor)**.
- 3. Download the file `BetterSabotage-2021.3.5s.dll` in the [Releases section](https://github.com/Pandraghon/BetterSabotage/releases).
+ 3. Download the file `BetterSabotage-2021.3.31.3s.dll` in the [Releases section](https://github.com/Pandraghon/BetterSabotage/releases).
  4. Copy the dll file into `Among Us\BepInEx\plugins`.
- 5. Repeat steps 3-4 for the file `Essentials-2021.3.5s.dll` from [DorCoMaNdO's repository](https://github.com/DorCoMaNdO/Reactor-Essentials/releases).
+ 5. Repeat steps 3-4 for the file `Essentials-2021.3.31.3s.dll` from [DorCoMaNdO's repository](https://github.com/DorCoMaNdO/Reactor-Essentials/releases).
  6. (Optional) If you want to play on official servers, you must do the following :
     - Open **`Among us\BepInEx\config\gg.reactor.api.cfg`** with a text editor. 
     - Find the line `Modded handshake = true` and change it to `Modded handshake = false`.
     - Save and close your editor.
+
+## Releases
+
+ | Among Us Version | Mod Version | All-in-one pack | DLL file |
+ | ---------------- | ----------- | :-------------: | :------: |
+ | 2021.3.31.3s     | v1.1.0      | **[Download](https://github.com/Pandraghon/BetterSabotage/releases/download/v1.1.0/BetterSabotage-v1.1.0.zip)** | **[Download](https://github.com/Pandraghon/BetterSabotage/releases/download/v1.1.0/BetterSabotage-2021.3.31.3s.dll)** |
+ | 2020.3.5s        | v1.0.5      | **[Download](https://github.com/Pandraghon/BetterSabotage/releases/download/v1.0.5/BetterSabotage-v1.0.5.zip)** | **[Download](https://github.com/Pandraghon/BetterSabotage/releases/download/v1.0.5/BetterSabotage-2021.3.5s.dll)** |
 
 ## Uninstallation
 
